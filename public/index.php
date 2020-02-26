@@ -1,3 +1,3 @@
 <?php
-echo 'hello sssssssssssss';
+echo 'index page';
 ?>

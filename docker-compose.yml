@@ -4,6 +4,18 @@
 version: "3.1"
 services:
 
+    db:
+      image: mysql:5.7
+      container_name: php-002-mysql
+      volumes:
+        - ./db/custom.cnf:/etc/mysql/conf.d/custom.cnf
+        - ./db_data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: test
+      ports:
+        - 3306
+
     webserver:
       image: nginx:alpine
       container_name: php-002-webserver
